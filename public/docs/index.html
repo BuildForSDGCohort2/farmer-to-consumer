@@ -46,47 +46,23 @@
           <!-- START_INFO -->
 <h1>Info</h1>
 <p>Welcome to the generated API reference.
-<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<a href="https://farmer-to-consumer.test/docs/collection.json">Get Postman Collection</a></p>
 <!-- END_INFO -->
-<h1>general</h1>
-<!-- START_4dfafe7f87ec132be3c8990dd1fa9078 -->
-<h2>Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/sanctum/csrf-cookie" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/sanctum/csrf-cookie"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET sanctum/csrf-cookie</code></p>
-<!-- END_4dfafe7f87ec132be3c8990dd1fa9078 -->
+<h1>Auth</h1>
+<p>APIs Auth management</p>
 <!-- START_d7b7952e7fdddc07c978c9bdaf757acf -->
-<h2>api/register</h2>
+<h2>Register User</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/register" \
+    "https://farmer-to-consumer.test/api/register" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -d '{"name":"John Doe","email":"johndoe@farmer-to-consumer.test","password":"johndoe2020","password_confirmation":"johndoe2020"}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/register"
+    "https://farmer-to-consumer.test/api/register"
 );
 
 let headers = {
@@ -94,26 +70,83 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "name": "John Doe",
+    "email": "johndoe@farmer-to-consumer.test",
+    "password": "johndoe2020",
+    "password_confirmation": "johndoe2020"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "user": {
+        "name": "John Doe",
+        "email": "johndoe@farmer-to-consumer.test"
+    },
+    "token": "1|8Fh0rH9Z7ZFTH7q883gnhy7zspRY7LtBLmY5qWt6NLZYKfpCIkTt9zgkuKRWqhZ0MFL3ulcj1x3oE81D"
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>full name.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>email address.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>user password.</td>
+</tr>
+<tr>
+<td><code>password_confirmation</code></td>
+<td>string</td>
+<td>required</td>
+<td>password confirmation.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_d7b7952e7fdddc07c978c9bdaf757acf -->
 <!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
-<h2>api/login</h2>
+<h2>Login User</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/login" \
+    "https://farmer-to-consumer.test/api/login" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -d '{"email":"johndoe@farmer-to-consumer.test","password":"johndoe2020"}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/login"
+    "https://farmer-to-consumer.test/api/login"
 );
 
 let headers = {
@@ -121,26 +154,68 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "email": "johndoe@farmer-to-consumer.test",
+    "password": "johndoe2020"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "user": {
+        "name": "John Doe",
+        "email": "johndoe@farmer-to-consumer.test"
+    },
+    "token": "1|8Fh0rH9Z7ZFTH7q883gnhy7zspRY7LtBLmY5qWt6NLZYKfpCIkTt9zgkuKRWqhZ0MFL3ulcj1x3oE81D"
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>email address.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>user password.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
 <!-- START_61739f3220a224b34228600649230ad1 -->
-<h2>api/logout</h2>
+<h2>Logout User</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/logout" \
+    "https://farmer-to-consumer.test/api/logout" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/logout"
+    "https://farmer-to-consumer.test/api/logout"
 );
 
 let headers = {
@@ -154,6 +229,10 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">"Token deleted"</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/logout</code></p>
 <!-- END_61739f3220a224b34228600649230ad1 -->

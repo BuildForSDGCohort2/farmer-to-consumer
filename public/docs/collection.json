@@ -2,49 +2,21 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "c9ad2d36-3673-4f2b-84c0-c324202cab49",
+        "_postman_id": "e6cce46b-114b-4485-b88a-86ff17220df5",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
     "item": [
         {
-            "name": "general",
-            "description": "",
+            "name": "Auth",
+            "description": "\nAPIs Auth management",
             "item": [
                 {
-                    "name": "Return an empty response simply to trigger the storage of the CSRF cookie in the browser.",
+                    "name": "Register User",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "sanctum\/csrf-cookie",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/register",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "farmer-to-consumer.test\/",
                             "path": "api\/register",
                             "query": []
                         },
@@ -61,18 +33,18 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@farmer-to-consumer.test\",\n    \"password\": \"johndoe2020\",\n    \"password_confirmation\": \"johndoe2020\"\n}"
                         },
                         "description": "",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/login",
+                    "name": "Login User",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "farmer-to-consumer.test\/",
                             "path": "api\/login",
                             "query": []
                         },
@@ -89,18 +61,18 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"email\": \"johndoe@farmer-to-consumer.test\",\n    \"password\": \"johndoe2020\"\n}"
                         },
                         "description": "",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/logout",
+                    "name": "Logout User",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "farmer-to-consumer.test\/",
                             "path": "api\/logout",
                             "query": []
                         },
