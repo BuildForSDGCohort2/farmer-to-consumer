@@ -71,7 +71,10 @@ fetch(url, {
 {
     "user": {
         "name": "John Doe",
-        "email": "johndoe@farmer-to-consumer.test"
+        "email": "johndoe@farmer-to-consumer.test",
+        "email_verified_at": null,
+        "created_at": "2020-08-25T11:53:39.000000Z",
+        "updated_at": "2020-08-25T11:53:39.000000Z"
     },
     "token": "1|8Fh0rH9Z7ZFTH7q883gnhy7zspRY7LtBLmY5qWt6NLZYKfpCIkTt9zgkuKRWqhZ0MFL3ulcj1x3oE81D"
 }
@@ -135,7 +138,10 @@ fetch(url, {
 {
     "user": {
         "name": "John Doe",
-        "email": "johndoe@farmer-to-consumer.test"
+        "email": "johndoe@farmer-to-consumer.test",
+        "email_verified_at": null,
+        "created_at": "2020-08-25T11:53:39.000000Z",
+        "updated_at": "2020-08-25T11:53:39.000000Z"
     },
     "token": "1|8Fh0rH9Z7ZFTH7q883gnhy7zspRY7LtBLmY5qWt6NLZYKfpCIkTt9zgkuKRWqhZ0MFL3ulcj1x3oE81D"
 }
