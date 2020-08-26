@@ -202,4 +202,56 @@ fetch(url, {
 
 <!-- END_61739f3220a224b34228600649230ad1 -->
 
+<!-- START_2b6e5a4b188cb183c7e59558cce36cb6 -->
+## Get User by Token
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://farmer-to-consumer.test/api/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "https://farmer-to-consumer.test/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "user": {
+        "name": "John Doe",
+        "email": "johndoe@farmer-to-consumer.test",
+        "email_verified_at": null,
+        "created_at": "2020-08-25T11:53:39.000000Z",
+        "updated_at": "2020-08-25T11:53:39.000000Z"
+    }
+}
+```
+
+### HTTP Request
+`GET api/user`
+
+
+<!-- END_2b6e5a4b188cb183c7e59558cce36cb6 -->
+
 

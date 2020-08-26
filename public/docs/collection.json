@@ -1,8 +1,8 @@
 {
     "variables": [],
     "info": {
-        "name": "Laravel API",
-        "_postman_id": "c573844f-63b0-4f9a-95b0-45797dd59992",
+        "name": "FarmerToConsumer API",
+        "_postman_id": "f82e9932-904c-4430-8896-3f5cace8e23f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -77,6 +77,34 @@
                             "query": []
                         },
                         "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get User by Token",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "farmer-to-consumer.test\/",
+                            "path": "api\/user",
+                            "query": []
+                        },
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",

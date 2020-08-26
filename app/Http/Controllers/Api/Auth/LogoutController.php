@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 /**
- * @authenticated
  * @group  Auth
  *
  * APIs Auth management
@@ -15,6 +14,7 @@ class LogoutController extends Controller
 {
     /**
      * Logout User
+     * @authenticated
      *
      * @response 200 "Token deleted"
      */
